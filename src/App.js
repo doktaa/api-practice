@@ -30,8 +30,10 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <input id="searchInput" type="text"/><button onClick={searchClick}>Search</button>
+    <div className="App bg-red-700">
+      <div className="h-24">
+        <input id="searchInput" className=" text-center h-full w-3/5 text-3xl" type="text"/><button className="" onClick={searchClick}>Search</button>
+      </div>
       <div>
         {pokeData != null ? 
           pokeData.data == null ? "Not found" : <PokeContainer data={pokeData.data}/>

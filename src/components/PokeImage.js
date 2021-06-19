@@ -2,6 +2,8 @@ import {useState} from 'react'
 
 const PokeImage = (props) => {
 
+    //Code below cycles through all the possible image paths in API return data and displays all images that are populated
+
     const [imgCntr, setImgCntr] = useState(0);
     let imgArr = []
 
@@ -46,11 +48,11 @@ const PokeImage = (props) => {
         }        
     };
 
-    console.log('imgarr', imgArr);
+    // console.log('imgarr', imgArr);
 
     return(
         <div>
-            <img src={imgArr[imgCntr]}/>
+            <img className= "w-full bg-gray-100 border-8 border-gray-400 rounded-3xl" src={imgArr[imgCntr]}/>
             <button onClick={() => cycleImg("prev")}>Prev</button>       
             <button onClick={() => cycleImg("next")}>Next</button>
         </div>

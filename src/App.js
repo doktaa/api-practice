@@ -31,8 +31,9 @@ function App() {
 
   return (
     <div className="App bg-red-700">
-      <div className="h-24">
-        <input id="searchInput" className=" text-center h-full w-3/5 text-3xl" type="text"/><button className="" onClick={searchClick}>Search</button>
+
+      <div className="h-24 my-8">
+        <input id="searchInput" className=" text-center h-full w-3/5 text-3xl rounded-full border-4 border-gray-300" type="text"/><button className="" onClick={searchClick}>Search</button>
       </div>
       <div>
         {pokeData != null ? 

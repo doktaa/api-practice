@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState} from 'react';
 
 const PokeImage = (props) => {
 
@@ -53,8 +53,8 @@ const PokeImage = (props) => {
     return(
         <div>
             <img className= "w-full bg-gray-100 border-8 border-gray-400 rounded-3xl" src={imgArr[imgCntr]}/>
-            <button onClick={() => cycleImg("prev")}>Prev</button>       
-            <button onClick={() => cycleImg("next")}>Next</button>
+            <img className="h-24 inline-block" src="/images/left-arrow.png" onClick={() => cycleImg("prev")}></img>      
+            <img className="h-24 inline-block" src="/images/right-arrow.png" onClick={() => cycleImg("next")}></img>
         </div>
     )
 }

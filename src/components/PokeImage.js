@@ -1,10 +1,17 @@
 import {useState} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {bindActionCreators} from 'redux'
+import {actionCreators} from '../state/index'
 
 const PokeImage = (props) => {
 
     //Code below cycles through all the possible image paths in API return data and displays all images that are populated
 
-    const [imgCntr, setImgCntr] = useState(0);
+    const imgCntr = useSelector((state) => state.imgCntr)
+    const dispatch = useDispatch()
+
+    const {imgNext, imgPrev} = bindActionCreators(actionCreators, dispatch)
+    // const [imgCntr, setImgCntr] = useState(0);
     let imgArr = []
 
     function imgExists(path) {
@@ -17,13 +24,13 @@ const PokeImage = (props) => {
         return item;
     }
     
-    function cycleImg(direction) {
-        if(direction === "next") {
-            imgCntr >= imgArr.length - 1 ? setImgCntr(0) : setImgCntr(imgCntr + 1); 
-        } else if (direction === "prev") {
-            imgCntr <= 0 ? setImgCntr(imgArr.length - 1) : setImgCntr(imgCntr -1);
-        }
-    }
+    // function cycleImg(direction) {
+    //     if(direction === "next") {
+    //         imgCntr >= imgArr.length - 1 ? setImgCntr(0) : setImgCntr(imgCntr + 1); 
+    //     } else if (direction === "prev") {
+    //         imgCntr <= 0 ? setImgCntr(imgArr.length - 1) : setImgCntr(imgCntr -1);
+    //     }
+    // }
 
     console.log('props', props);
 
@@ -53,8 +60,8 @@ const PokeImage = (props) => {
     return(
         <div>
             <img className= "w-full bg-gray-100 border-8 border-gray-400 rounded-3xl" src={imgArr[imgCntr]}/>
-            <img className="h-24 inline-block" src="/images/left-arrow.png" onClick={() => cycleImg("prev")}></img>      
-            <img className="h-24 inline-block" src="/images/right-arrow.png" onClick={() => cycleImg("next")}></img>
+            <img className="h-24 inline-block" src="/images/left-arrow.png" onClick={() => imgPrev(imgArr.length)}></img>      
+            <img className="h-24 inline-block" src="/images/right-arrow.png" onClick={() => imgNext(imgArr.length)}></img>
         </div>
     )
 }

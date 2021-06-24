@@ -18,7 +18,7 @@ const PokeDetails = (props) => {
     return (
         <div>
             <div className="">
-                {typeListUrl.map(i => {return (<img src={i.url} className={"icon-poke inline-block mx-2 my-4 h-20 object-contain " + i.code}/>)})}
+                {typeListUrl.map(i => {return (<img title={i.code} src={i.url} className={"icon-poke inline-block mx-2 my-4 h-20 object-contain " + i.code}/>)})}
             </div>
             <div className="grid grid-cols-2 gap-2 h-48">                
                 {statsArr.map(x => <div>{x.stat.name.replace("-", " ").toUpperCase()} : {x.base_stat}</div>)}

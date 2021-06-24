@@ -1,19 +1,33 @@
 import PokeMoveCard from './PokeMoveCard.js';
 import {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {bindActionCreators} from 'redux'
+import {actionCreators} from '../state/index'
 
 
 const PokeMoves = (props) => {
 
-    const [moveData, setMoveData] = useState({clicked: false, moveData: null});
+    const moveData = useSelector((state) => state.move)
+    const dispatch = useDispatch()
+
+    const {setSelectedMove} = bindActionCreators(actionCreators, dispatch)
+
+    // const [moveData, setMoveData] = useState({clicked: false, moveData: null});
 
     let moveList = props
     const axios = require('axios');
 
     async function moveClick(url) {
         let moveData = await axios.get(url);
-        setMoveData({clicked: true, moveData: moveData.data})
+        // setMoveData({clicked: true, moveData: moveData.data})
+        setSelectedMove(moveData.data)
 
         console.log('move click', moveData);
+    }
+    
+
+    function moveCloseClick() {
+        setSelectedMove(null)
     }
 
 
@@ -21,7 +35,7 @@ const PokeMoves = (props) => {
 
     return (
         <div>
-            <PokeMoveCard data={moveData}/>
+            <PokeMoveCard data={moveData} clickfunc={moveCloseClick}/>
 
             <table className="table-auto w-full">
                 {

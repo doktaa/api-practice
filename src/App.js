@@ -2,11 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
 import PokeContainer from './components/PokeContainer.js'
+import {useSelector, useDispatch} from 'react-redux';
+import {bindActionCreators} from 'redux'
+import {actionCreators} from './state/index'
 
 function App() {
 
+  const pokeData = useSelector((state) => state.pokemon)
+  const dispatch = useDispatch()
+
+  const {setPokemon, setSelectedMove} = bindActionCreators(actionCreators, dispatch)
+
   // const [isLoading, setIsLoading] = useState(false);
-  const [pokeData, setpokeData] = useState(null);
+  // const [pokeData, setpokeData] = useState(null);
   let baseUrl = "https://pokeapi.co/api/v2/";
   const axios = require('axios');
 
@@ -14,11 +22,16 @@ function App() {
     try{
       const response = await axios.get(`${baseUrl}pokemon/${pokename}`)
       console.log('wat', response.data)
-      setpokeData({isLoaded: true, data: response.data});
+      setPokemon({isLoaded: true, data: response.data});
+
+      console.log('pokeData...?', pokeData);
+
+      setSelectedMove(null);
       // document.getElementById("randomDiv").innerHTML = `<img src="${pokeData.data.sprites.back_default}"/>`
             
     } catch (error) {
-      setpokeData({isLoaded: true, data: null});
+      setPokemon({isLoaded: true, data: null});
+      setSelectedMove(null);
       console.log(error);
     }
   }

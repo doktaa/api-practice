@@ -1,126 +1,131 @@
-const basePath = "/images/type-icons/"
+import bug from '../images/type-icons/bug.svg'
+import dark from '../images/type-icons/dark.svg'
+import dragon from '../images/type-icons/dragon.svg'
+import electric from '../images/type-icons/electric.svg'
+import fairy from '../images/type-icons/fairy.svg'
+import fighting from '../images/type-icons/fighting.svg'
+import fire from '../images/type-icons/fire.svg'
+import flying from '../images/type-icons/flying.svg'
+import ghost from '../images/type-icons/ghost.svg'
+import grass from '../images/type-icons/grass.svg'
+import ground from '../images/type-icons/ground.svg'
+import ice from '../images/type-icons/ice.svg'
+import normal from '../images/type-icons/normal.svg'
+import poison from '../images/type-icons/poison.svg'
+import psychic from '../images/type-icons/psychic.svg'
+import rock from '../images/type-icons/rock.svg'
+import steel from '../images/type-icons/steel.svg'
+import water from '../images/type-icons/water.svg'
 
-exports.types = [
+let typeObj = [
     {
     "id": 1,
     "name": "Normal",
     "code": "normal",
-    "url" : basePath + "normal.svg"
+    "url" : {normal}
     },
     {
       "id": 2,
       "name": "Fighting",
       "code": "fighting",
-      "url" : basePath + "fighting.svg"
+      "url" : {fighting}
     },
     {
       "id": 3,
       "name": "Flying",
       "code": "flying",
-      "url" : basePath + "flying.svg"
+      "url" : {flying}
     },
     {
       "id": 4,
       "name": "Poison",
       "code": "poison",
-      "url" : basePath + "poison.svg"
+      "url" : {poison}
     },
     {
       "id": 5,
       "name": "Ground",
       "code": "ground",
-      "url" : basePath + "ground.svg"
+      "url" : {ground}
     },
     {
       "id": 6,
       "name": "Rock",
       "code": "rock",
-      "url" : basePath + "rock.svg"
+      "url" : {rock}
     },
     {
       "id": 7,
       "name": "Bug",
       "code": "bug",
-      "url" : basePath + "bug.svg"
+      "url" : {bug}
     },
     {
       "id": 8,
       "name": "Ghost",
       "code": "ghost",
-      "url" : basePath + "ghost.svg"
+      "url" : {ghost}
     },
     {
       "id": 9,
       "name": "Steel",
       "code": "steel",
-      "url" : basePath + "steel.svg"
+      "url" : {steel}
     },
     {
       "id": 10,
       "name": "Fire",
       "code": "fire",
-      "url" : basePath + "fire.svg"
+      "url" : {fire}
     },
     {
       "id": 11,
       "name": "Water",
       "code": "water",
-      "url" : basePath + "water.svg"
+      "url" : {water}
     },
     {
       "id": 12,
       "name": "Grass",
       "code": "grass",
-      "url" : basePath + "grass.svg"
+      "url" : {grass}
     },
     {
       "id": 13,
       "name": "Electric",
       "code": "electric",
-      "url" : basePath + "electric.svg"
+      "url" : {electric}
     },
     {
       "id": 14,
       "name": "Psychic",
       "code": "psychic",
-      "url" : basePath + "psychic.svg"
+      "url" : {psychic}
     },
     {
       "id": 15,
       "name": "Ice",
       "code": "ice",
-      "url" : basePath + "ice.svg"
+      "url" : {ice}
     },
     {
       "id": 16,
       "name": "Dragon",
       "code": "dragon",
-      "url" : basePath + "dragon.svg"
+      "url" : {dragon}
     },
     {
       "id": 17,
       "name": "Dark",
       "code": "dark",
-      "url" : basePath + "dark.svg"
+      "url" : {dark}
     },
     {
       "id": 18,
       "name": "Fairy",
       "code": "fairy",
-      "url" : basePath + "fairy.svg"
-    },
-    {
-      "id": 0,
-      "name": "Unknown",
-      "code": "unknown",
-      "legacy": true,
-      "url" : basePath + "unknown.svg"
-    },
-    {
-      "id": -1,
-      "name": "Shadow",
-      "code": "shadow",
-      "legacy": true,
-      "url" : basePath + "shadow.svg"
+      "url" : {fairy}
     }
 ]
+
+export default typeObj

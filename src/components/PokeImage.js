@@ -2,6 +2,8 @@ import {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import {actionCreators} from '../state/index'
+import leftArrow from '../images/left-arrow.png'
+import rightArrow from '../images/right-arrow.png'
 
 const PokeImage = (props) => {
 
@@ -60,8 +62,8 @@ const PokeImage = (props) => {
     return(
         <div>
             <img className= "w-full bg-gray-100 border-8 border-gray-400 rounded-3xl" src={imgArr[imgCntr]}/>
-            <img className="h-24 inline-block" src="/images/left-arrow.png" onClick={() => imgPrev(imgArr.length)}></img>      
-            <img className="h-24 inline-block" src="/images/right-arrow.png" onClick={() => imgNext(imgArr.length)}></img>
+            <img className="h-24 inline-block" src={leftArrow} onClick={() => imgPrev(imgArr.length)}></img>      
+            <img className="h-24 inline-block" src={rightArrow} onClick={() => imgNext(imgArr.length)}></img>
         </div>
     )
 }

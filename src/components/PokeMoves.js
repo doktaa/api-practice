@@ -39,7 +39,7 @@ const PokeMoves = (props) => {
 
             <table className="table-auto w-full">
                 {
-                    moveList.data.map((m, i) => {return(<tr className={"" + i % 2 == 0 ? "bg-gray-300" : "bg-gray-200"}><td onClick={() => moveClick(m.url)}>{m.name.replace("-", " ").toUpperCase()}</td></tr>)})
+                    moveList.data.map((m, i) => {return(<tr className={`cursor-pointer hover:bg-gray-500 ${i % 2 == 0 ? "bg-gray-300" : "bg-gray-200"}`}><td onClick={() => moveClick(m.url)}>{m.name.replace("-", " ").toUpperCase()}</td></tr>)})
                     // moveList.data.map(m => console.log(m))
                 }
             </table>

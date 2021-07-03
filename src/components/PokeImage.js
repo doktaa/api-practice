@@ -62,8 +62,8 @@ const PokeImage = (props) => {
     return(
         <div>
             <img className= "w-full bg-gray-100 border-8 border-gray-400 rounded-3xl" src={imgArr[imgCntr]}/>
-            <img className="h-24 inline-block" src={leftArrow} onClick={() => imgPrev(imgArr.length)}></img>      
-            <img className="h-24 inline-block" src={rightArrow} onClick={() => imgNext(imgArr.length)}></img>
+            <img className="h-24 inline-block cursor-pointer transform hover:scale-110 m-4" src={leftArrow} onClick={() => imgPrev(imgArr.length)}></img>      
+            <img className="h-24 inline-block cursor-pointer transform hover:scale-110 m-4" src={rightArrow} onClick={() => imgNext(imgArr.length)}></img>
         </div>
     )
 }

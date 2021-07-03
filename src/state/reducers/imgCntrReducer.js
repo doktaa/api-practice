@@ -8,7 +8,7 @@ const imgCntrReducer = (state = 0, action) => {
         case "prev":
             return state == 0 ? action.payload - 1 : state - 1
         default:
-            return 0
+            return state
     }
 }
 

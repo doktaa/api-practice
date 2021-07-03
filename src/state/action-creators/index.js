@@ -1,7 +1,5 @@
 export const setPokemon = (pokeData) => {
 
-    console.log('setpokemon', pokeData);
-
     return (dispatch) => {
         dispatch({
             type: "setPokemon",
@@ -42,6 +40,15 @@ export const imgPrev = (imgArrLen) => {
         dispatch({
             type: "prev",
             payload: imgArrLen
+        })
+    }
+}
+
+export const setEvo = (evoData) => {
+    return(dispatch) => {
+        dispatch({
+            type: "setEvo",
+            payload: evoData
         })
     }
 }
